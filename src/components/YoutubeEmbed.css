@@ -1,0 +1,11 @@
+#youtube-embed {
+  width: 40rem;
+  height: 25rem;
+}
+
+@media (max-width: 767px) {
+  #youtube-embed {
+    width: 20rem;
+    height: 14rem;
+  }
+}

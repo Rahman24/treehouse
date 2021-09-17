@@ -1,0 +1,7 @@
+.event-pass-list {
+  max-width: 100%;
+  position: relative;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
