@@ -75,11 +75,8 @@ function App() {
             <Route
               exact
               path="/"
-              render={(routeProps) => (
-                <Authenticate>
-                  <HomePage {...routeProps} />
-                </Authenticate>
-              )}
+              render={(routeProps) => 
+                  <HomePage {...routeProps} /> }
             />
             <Redirect from="*" to="/" />
           </Switch>
