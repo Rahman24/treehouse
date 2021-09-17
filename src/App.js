@@ -3,11 +3,9 @@ import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 import HomePage from "pages/home";
-import EventSchedulePage from "pages/schedule";
 import EventsPage from "pages/events";
 import TeamPage from "pages/team";
-//import EventPassPage from "pages/pass";
-import EventLivePage from "pages/live";
+import LoginPage from "pages/login";
 import ProfilePage from "pages/profile";
 import Authenticate from "components/Auth";
 
@@ -55,24 +53,7 @@ function App() {
                 </Authenticate>
               )}
             />
-            <Route
-              exact
-              path="/schedule"
-              render={(routeProps) => (
-                <Authenticate>
-                  <EventSchedulePage {...routeProps} />
-                </Authenticate>
-              )}
-            />
-            <Route
-              exact
-              path="/live"
-              render={(routeProps) => (
-                <Authenticate>
-                  <EventLivePage {...routeProps} />
-                </Authenticate>
-              )}
-            />
+            <Route exact path="/login" render={(routeProps) => <LoginPage {...routeProps} />} />
             <Route
               exact
               path="/team"
@@ -82,7 +63,15 @@ function App() {
                 </Authenticate>
               )}
             />
-            <Route exact path="/profile" render={(routeProps) => <ProfilePage {...routeProps} />} />
+            <Route
+            	exact 
+            	path="/profile" 
+            	render={(routeProps) => (
+            		<Authenticate>
+            			<ProfilePage {...routeProps} />
+            		</Authenticate>
+            	)} 
+            />
             <Route
               exact
               path="/"

@@ -21,7 +21,7 @@ const EventLiveTag = () => {
   
   const { live: isLive, link, stream_link } = liveData || {};
   const tagClass = isLive ? "bg-color-aquagreen" : "bg-secondary";
-  const tagText = isLive ? "Live Now" : "Live Soon";
+  const tagText = isLive ? "Live" : "Offline";
   const shadowClass = isLive ? "shadow-live" : "shadow-disabled";
   const btnProps = session.accessToken ? { href: link, target: "_blank" } : { href: "/pass" };
 
