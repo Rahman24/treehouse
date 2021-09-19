@@ -15,7 +15,7 @@ const Authenticate = ({ children }) => {
 
   if (loading) {
     return (
-      <Layout displayNav={false}>
+      <Layout>
         <h3 className="my-5 m-auto text-center text-white text-heading">Loading...Please wait</h3>
       </Layout>
     );

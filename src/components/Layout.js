@@ -3,10 +3,10 @@ import Footer from "components/Footer";
 
 import "./Layout.css";
 
-const Layout = ({ children, displayNav = true }) => {
+const Layout = ({ children }) => {
   return (
     <main className="bg-color">
-      {displayNav && <NavigationDefault />}
+      <NavigationDefault />
       <div className="layout-container">{children}</div>
       <Footer />
     </main>
