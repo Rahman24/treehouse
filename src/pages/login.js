@@ -1,7 +1,6 @@
 import { useEffect, useState, useContext } from "react";
 import { Redirect } from "react-router";
 
-import Loader from "components/Loader";
 import Layout from "components/Layout";
 import Profile from "components/Profile";
 import EventPassList from "components/event/PassList";
@@ -48,16 +47,24 @@ const EventPassPage = () => {
         });
     }
   }, [session]);
+  
+  const Loader = ({ loading, children }) => {
+  	return loading ? (
+  	  <h3 className="text-white my-5 m-auto text-center">Signing in with your Student Mail ID...</h3>
+  	) : (
+  	  children
+  	);
+	};
 
   return (
     <Layout>
       <div className="container event-pass-page">
-        <h1 className="text-white text-uppercase text-center my-5 heading">Event Passes</h1>
         <Loader loading={loading}>
           {session.accessToken ? (
             <Redirect to="/" />
           ) : (
             <div className="m-auto text-center my-2">
+			        <h1 className="text-white text-uppercase text-center my-5 heading">Seems you haven't signed in yet!! Pleas signin with your @student.onlinedegree.iitm.ac.in account to get started!!</h1>
               <AuthButton onAuthSuccess={handleAuthSuccess} onAuthFailure={handleAuthFailure} />
             </div>
           )}

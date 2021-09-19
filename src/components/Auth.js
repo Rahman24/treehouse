@@ -7,8 +7,9 @@ const Authenticate = ({ children }) => {
 
   if (session.accessToken) {
     return children;
+  } else {
+  	return <Redirect to="/login" />;
   }
-  return <Redirect to="/login" />;
 };
 
 export default Authenticate;

@@ -1,0 +1,43 @@
+
+.events-list .event-category-group {
+  margin: auto;
+  text-align: center;
+  display: flex;
+  width: 90%;
+}
+
+.events-list .event-category-group label {
+  font-size: 2rem;
+}
+
+.events-list .event-category-group .btn-outline-green {
+  background: linear-gradient(180deg, #4F5254 0%, #393B3A 100%);
+	box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4), inset 0px 1px 0px rgba(255, 255, 255, 0.3);
+	border-radius: 4px;
+	color: white
+}
+
+.events-list .event-category-group input[type="radio"]:checked + label {
+  background: linear-gradient(180deg, #2C2E2F 0%, #404142 100%);
+	box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px 2px 3px rgba(0, 0, 0, 0.5);
+	border-radius: 4px;
+  color: white
+}
+
+.btn-group {
+  border-radius: 4px;
+  border: 1px solid #000000;
+}
+
+.btn-group > .btn {
+  border: none;
+}
+
+.events-list .event-category-group label {
+  font-size: 1rem;
+}
+
+.event-card-list {
+  flex-direction: row;
+  flex-wrap: wrap;
+}

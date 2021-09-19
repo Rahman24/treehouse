@@ -72,15 +72,7 @@ function App() {
             		</Authenticate>
             	)} 
             />
-            <Route
-              exact
-              path="/"
-              render={(routeProps) => (
-                <Authenticate>
-                  <HomePage {...routeProps} />
-                </Authenticate>
-              )}
-            />
+            <Route exact path="/" render={(routeProps) => <HomePage {...routeProps} />} />
             <Redirect from="*" to="/" />
           </Switch>
         </BrowserRouter>
