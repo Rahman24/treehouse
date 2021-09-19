@@ -70,7 +70,7 @@ const EventsList = () => {
           </span>
         ) : (
           <button
-            className="btn register-button rounded-pill bg-color-aquagreen px-5"
+            className="btn register-button rounded-pill bg-color-black px-5"
             onClick={registerForNotification}
           >
             Get Notified of Upcoming Events

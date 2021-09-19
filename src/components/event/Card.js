@@ -33,7 +33,7 @@ const EventCard = ({ name, desc, img, start = {}, end = {}, gform, rules, type =
             </div>
             <div className="mt-3 description">{desc}</div>
             <a
-              className="mx-1 btn mt-3 mb-3 register-button rounded-pill bg-color-aquagreen"
+              className="mx-1 btn mt-3 mb-3 register-button rounded-pill bg-color-black"
               rel="noreferrer noopener"
               {...btnProps}
             >

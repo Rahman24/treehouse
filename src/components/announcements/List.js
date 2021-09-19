@@ -65,12 +65,12 @@ const Announcements = () => {
     return (
       <div className="m-auto text-center my-4">
         {notify ? (
-          <span className="btn btn-info egister-button rounded-pill px-5">
+          <span className="btn btn-info register-button rounded-pill px-5">
             You will be notified of events
           </span>
         ) : (
           <button
-            className="btn register-button rounded-pill bg-color-aquagreen px-5"
+            className="btn register-button rounded-pill bg-color-black px-5 btn-box-shadow-black text-white"
             onClick={registerForNotification}
           >
             Get Notified of Announcements
