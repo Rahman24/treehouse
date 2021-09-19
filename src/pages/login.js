@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { Redirect } from "react-router";
 
 import Layout from "components/Layout";
@@ -7,7 +7,7 @@ import AuthButton from "components/button/Auth";
 import { AppContext } from "contexts/app";
 
 const LoginPage = () => {
-  const { session, setSession } = useContext(AppContext);
+  const { setSession } = useContext(AppContext);
 
   const handleAuthFailure = (response) => {
     const { errorCode, errorMessage } = response;
@@ -16,11 +16,8 @@ const LoginPage = () => {
 
   const handleAuthSuccess = (response) => {
     setSession(response);
-  };
-
-  if(session.accessToken) {
     return <Redirect to="/" />;
-  }
+  };
   
   return (
     <Layout>
@@ -35,8 +32,7 @@ const LoginPage = () => {
           <AuthButton onAuthSuccess={handleAuthSuccess} onAuthFailure={handleAuthFailure} />
         </div>
         <h6 className="text-center my-5 mx-5" style={{ color: "rgba(255,255,255,0.6)" }}>
-          If you face any issues signing in with your student mail id or if you can't see your
-          registered event passes, please let us know:{" "}
+          If you face any issues signing in with your student mail id, please let us know:{" "}
           <a href="mailto:21f1005287@student.onlinedegree.iitm.ac.in" className="text-white">
             Web Team
           </a>

@@ -10,7 +10,7 @@ import { getProfileDetails } from "apis/firebase";
 
 import { AppContext } from "contexts/app";
 
-const ProfilePage = () => {
+const EventPassPage = () => {
   const [profile, setProfile] = useState({});
   const [loading, setLoading] = useState(true);
   const { session, setSession } = useContext(AppContext);
@@ -50,7 +50,7 @@ const ProfilePage = () => {
   return (
     <Layout>
       <div className="container event-pass-page">
-        <h1 className="text-white text-uppercase text-center my-5 heading">Your Profile</h1>
+        <h1 className="text-white text-uppercase text-center my-5 heading">Event Passes</h1>
         <Loader loading={loading}>
           {session.accessToken ? (
             <>
@@ -63,9 +63,12 @@ const ProfilePage = () => {
             </div>
           )}
         </Loader>
+        <h6 className="text-center my-5 mx-5" style={{color:"rgba(255,255,255,0.6)"}}>
+        	If you face any issues signing in with your student mail id or if you can't see your registered event passes, please let us know: <a href="mailto:21f1005287@student.onlinedegree.iitm.ac.in" className="text-white">Web Team</a>
+        </h6>
       </div>
     </Layout>
   );
 };
 
-export default ProfilePage;
+export default EventPassPage;
