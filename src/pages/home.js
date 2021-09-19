@@ -1,17 +1,11 @@
-import { Redirect } from "react-router";
-
 import Layout from "components/Layout";
-import { getProfileDetails } from "apis/firebase";
+import Announcements from "components/announcements/List";
 
 const HomePage = () => {
   return (
-  	<Loader loading={loading}>
-      {session.accessToken ? (
-        <Layout></Layout>
-      ) : (
-        <Redirect to="/login" />
-      )}
-    </Loader>
+    <Layout>
+      <Announcements />
+    </Layout>
   );
 };
 

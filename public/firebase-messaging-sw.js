@@ -9,14 +9,12 @@ importScripts('https://www.gstatic.com/firebasejs/8.2.0/firebase-messaging.js');
 // https://firebase.google.com/docs/web/setup#config-object
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBDgjn2V1Q2Xc8HeC9m-ksuxyqgL_j5WGM",
-  authDomain: "invictus-iitm.firebaseapp.com",
-  databaseURL: "https://invictus-iitm-default-rtdb.firebaseio.com",
-  projectId: "invictus-iitm",
-  storageBucket: "invictus-iitm.appspot.com",
-  messagingSenderId: "930865088815",
-  appId: "1:930865088815:web:75fdf67da3083014dbf9da",
-  measurementId: "G-F3Y9VNL2T5"
+  apiKey: "AIzaSyAMip1J2he-VpyUcXOmEGzAdnAoTs4K4_U",
+  authDomain: "treehouse-iitm.firebaseapp.com",
+  projectId: "treehouse-iitm",
+  storageBucket: "treehouse-iitm.appspot.com",
+  messagingSenderId: "42526606124",
+  appId: "1:42526606124:web:6c5e8adf068e54ecaae289",
 };
 
 firebase.initializeApp(firebaseConfig);

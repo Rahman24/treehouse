@@ -10,7 +10,7 @@ import { getProfileDetails } from "apis/firebase";
 
 import { AppContext } from "contexts/app";
 
-const EventPassPage = () => {
+const ProfilePage = () => {
   const [profile, setProfile] = useState({});
   const [loading, setLoading] = useState(true);
   const { session, setSession } = useContext(AppContext);
@@ -71,4 +71,4 @@ const EventPassPage = () => {
   );
 };
 
-export default EventPassPage;
+export default ProfilePage;

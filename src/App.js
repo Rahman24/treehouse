@@ -33,11 +33,15 @@ function App() {
   }, []);
 
   useEffect(() => {
-    onMessageListener().then(payload => {
-      const { notification: { title, body }} = payload;
-      alert(`${title}\n${body}`);
-    }).catch(err => console.err(err));
-  })
+    onMessageListener()
+      .then((payload) => {
+        const {
+          notification: { title, body },
+        } = payload;
+        alert(`${title}\n${body}`);
+      })
+      .catch((err) => console.err(err));
+  });
 
   return (
     <div className="App">
@@ -64,13 +68,13 @@ function App() {
               )}
             />
             <Route
-            	exact 
-            	path="/profile" 
-            	render={(routeProps) => (
-            		<Authenticate>
-            			<ProfilePage {...routeProps} />
-            		</Authenticate>
-            	)} 
+              exact
+              path="/profile"
+              render={(routeProps) => (
+                <Authenticate>
+                  <ProfilePage {...routeProps} />
+                </Authenticate>
+              )}
             />
             <Route
               exact

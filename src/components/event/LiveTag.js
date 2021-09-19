@@ -20,7 +20,7 @@ const EventLiveTag = () => {
   }, [session]);
   
   const { live: isLive, link, stream_link } = liveData || {};
-  const tagClass = isLive ? "bg-color-aquagreen" : "bg-secondary";
+  const tagClass = isLive ? "bg-color-black" : "bg-secondary";
   const tagText = isLive ? "Live" : "Offline";
   const shadowClass = isLive ? "shadow-live" : "shadow-disabled";
   const btnProps = session.accessToken ? { href: link, target: "_blank" } : { href: "/pass" };

@@ -9,3 +9,15 @@ export const EVENT_CATEGORIES = Object.freeze({
     name: "educational",
   },
 });
+
+export const ANNOUNCEMENT_CATEGORIES = Object.freeze({
+  generalAnnouncements: {
+    name: "general",
+  },
+  courseAnnouncements: {
+    name: "course",
+  },
+  houseAnnouncements: {
+    name: "house",
+  },
+});

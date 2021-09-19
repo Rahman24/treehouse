@@ -3,24 +3,24 @@ import { getMessaging, getToken } from "firebase/messaging";
 
 import { getEvents, updateFCMTokenToDB } from "apis/firebase";
 
-import EventCard from "./Card";
+import EventCard from "components/event/Card";
 import Loader from "components/Loader";
 
-import { EVENT_CATEGORIES } from "constants/app-defaults";
+import { ANNOUNCEMENT_CATEGORIES } from "constants/app-defaults";
 
 import { getSortedEventsByCategory } from "helpers/event";
 
 import { AppContext } from "contexts/app";
 
-import "./List.css";
+import "components/event/List.css";
 
-const { fun: funCategory, competitive: compCategory, educational: eduCategory } = EVENT_CATEGORIES;
+const { generalAnnouncements: general, courseAnnouncements: course, houseAnnouncements: house } = ANNOUNCEMENT_CATEGORIES;
 
-const EventsList = () => {
+const Announcements = () => {
   const [loadingEvents, setLoadingEvents] = useState(true);
   const [eventsByCategory, setEventsByCategory] = useState({});
   const [notify, setNotify] = useState(false);
-  const [activeCategory, setActiveCategory] = useState(funCategory.name);
+  const [activeCategory, setActiveCategory] = useState(general.name);
   const { session } = useContext(AppContext);
 
   const handleCategorySelection = (event) => {
@@ -65,15 +65,15 @@ const EventsList = () => {
     return (
       <div className="m-auto text-center my-4">
         {notify ? (
-          <span className="btn btn-info egister-button rounded-pill px-5">
+          <span className="btn btn-info register-button rounded-pill px-5">
             You will be notified of events
           </span>
         ) : (
           <button
-            className="btn register-button rounded-pill bg-color-black px-5"
+            className="btn register-button rounded-pill bg-color-black px-5 btn-box-shadow-black text-white"
             onClick={registerForNotification}
           >
-            Get Notified of Upcoming Events
+            Get Notified of Announcements
           </button>
         )}
       </div>
@@ -83,7 +83,7 @@ const EventsList = () => {
   const eventList = eventsByCategory[activeCategory] || [];
   return (
     <div className="events-list">
-      <h1 className="text-center text-white mb-5 heading text-uppercase">Events List</h1>
+      <br /><br />
       <div
         className="btn-group event-category-group mb-5"
         role="group"
@@ -93,42 +93,42 @@ const EventsList = () => {
           type="radio"
           className="btn-check"
           name="activeCategory"
-          value={funCategory.name}
+          value={general.name}
           id="btnradio1"
           autoComplete="off"
           onChange={handleCategorySelection}
-          checked={activeCategory === funCategory.name}
+          checked={activeCategory === general.name}
         />
         <label className="btn btn-outline-green text-uppercase fw-bold" htmlFor="btnradio1">
-          Fun
+          General
         </label>
 
         <input
           type="radio"
           className="btn-check"
           name="activeCategory"
-          value={compCategory.name}
+          value={course.name}
           id="btnradio2"
           autoComplete="off"
           onChange={handleCategorySelection}
-          checked={activeCategory === compCategory.name}
+          checked={activeCategory === course.name}
         />
         <label className="btn btn-outline-green text-uppercase fw-bold" htmlFor="btnradio2">
-          Competitive
+          Course
         </label>
 
         <input
           type="radio"
           className="btn-check"
           name="activeCategory"
-          value={eduCategory.name}
+          value={house.name}
           id="btnradio3"
           autoComplete="off"
           onChange={handleCategorySelection}
-          checked={activeCategory === eduCategory.name}
+          checked={activeCategory === house.name}
         />
         <label className="btn btn-outline-green text-uppercase fw-bold" htmlFor="btnradio3">
-          Educational
+          House
         </label>
       </div>
 
@@ -139,7 +139,7 @@ const EventsList = () => {
           ))}
           {eventList.length === 0 && (
             <h4 className="text-center text-uppercase text-white m-auto">
-              There are no events in this category yet
+              There are no Announcements made yet!!
             </h4>
           )}
         </div>
@@ -149,4 +149,4 @@ const EventsList = () => {
   );
 };
 
-export default EventsList;
+export default Announcements;
