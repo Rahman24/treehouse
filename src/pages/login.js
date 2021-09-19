@@ -16,7 +16,6 @@ const LoginPage = () => {
 
   const handleAuthSuccess = (response) => {
     setSession(response);
-    return <Redirect to="/" />;
   };
 
   if(session.accessToken) {
