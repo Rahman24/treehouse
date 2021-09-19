@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Redirect } from "react-router";
 
 import Layout from "components/Layout";
@@ -7,7 +7,7 @@ import AuthButton from "components/button/Auth";
 import { AppContext } from "contexts/app";
 
 const LoginPage = () => {
-  const { setSession } = useContext(AppContext);
+  const { session, setSession } = useContext(AppContext);
 
   const handleAuthFailure = (response) => {
     const { errorCode, errorMessage } = response;
@@ -16,8 +16,11 @@ const LoginPage = () => {
 
   const handleAuthSuccess = (response) => {
     setSession(response);
-    return <Redirect to="/" />;
   };
+
+  if(session.accessToken) {
+    return <Redirect to="/" />;
+  }
   
   return (
     <Layout>
