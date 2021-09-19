@@ -26,7 +26,7 @@ const LINKS = [
 
 const NavigationDefault = () => {
   return (
-    <nav className="navbar navbar-dark bg-color-darkgreen fixed-top navbar-expand-lg px-4 shadow">
+    <nav className="navbar navbar-dark bg-color-darkblack fixed-top navbar-expand-lg px-4 shadow">
       <div className="container-fluid">
         <img src={banner} className="navbar-banner" alt="navigation banner" />
         <button
@@ -41,7 +41,7 @@ const NavigationDefault = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav navbar-dark bg-color-darkgreen py-2 px-5">
+          <ul className="navbar-nav navbar-dark bg-color-darkblack py-2 px-5">
             {LINKS.map(({ to, label }) => (
               <li className="nav-item mx-3" key={to}>
                 <NavLink
