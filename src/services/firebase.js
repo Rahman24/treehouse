@@ -1,5 +1,4 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 
 export const initFirebase = () => {
   const firebaseApp = initializeApp({
@@ -12,5 +11,4 @@ export const initFirebase = () => {
     appId: process.env.REACT_APP_FIREBASE_APP_ID,
     measurementId: process.env.REACT_APP_MEASUREMENT_ID
   });
-  const analytics = getAnalytics(firebaseApp);
 };

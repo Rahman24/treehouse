@@ -19,7 +19,10 @@ const AuthButton = ({ onAuthSuccess, onAuthFailure }) => {
   };
 
   return (
-    <button className="btn register-button rounded-pill bg-color-aquagreen signin" onClick={handleClick}>
+    <button
+      className="btn register-button rounded-pill bg-color-aquagreen text-white signin"
+      onClick={handleClick}
+    >
       Sign in
     </button>
   );
