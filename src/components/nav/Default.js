@@ -26,7 +26,7 @@ const LINKS = [
 
 const NavigationDefault = () => {
   return (
-    <nav className="navbar navbar-dark bg-color-darkblack fixed-top navbar-expand-lg px-4 shadow">
+    <nav className="navbar navbar-dark bg-color-darkblack fixed-top navbar-expand-lg shadow">
       <div className="container-fluid">
         <img src={banner} className="navbar-banner" alt="navigation banner" />
         <button
