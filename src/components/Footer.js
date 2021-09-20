@@ -46,7 +46,7 @@ const Footer = () => {
         <div className="col-6 text-end logo">
           <ul className="list-group list-group-horizontal">
             <li className="list-group-item bg-transparent border-0 px-0">
-              <img src={logo} alt="treehouse logo" />
+              <img src={logo} alt="treehouse logo" style={{width: "3rem" }} />
             </li>
           </ul>
         </div>

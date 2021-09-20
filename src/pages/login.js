@@ -25,17 +25,17 @@ const LoginPage = () => {
   return (
     <Layout>
       <div className="container event-pass-page">
-        <div className="m-auto text-center my-2">
-          <h5 className="text-white text-uppercase text-center my-5 heading">
-            You haven't signed in yet.
-          </h5>
+        <div className="m-4 text-center">
+          <h1 className="text-center text-white mb-4 heading text-uppercase">
+          	Welcome to Treehouse!!
+          </h1>
           <p className="text-center text-white mb-5">
             Please signin with your @student.onlinedegree.iitm.ac.in account to get started!!
           </p>
           <AuthButton onAuthSuccess={handleAuthSuccess} onAuthFailure={handleAuthFailure} />
         </div>
         <h6 className="text-center my-5 mx-5" style={{ color: "rgba(255,255,255,0.6)" }}>
-          If you face any issues signing in with your student mail id, please let us know:{" "}
+          If you face any issues signing in with your student mail id, please let us know: <br />
           <a href="mailto:21f1005287@student.onlinedegree.iitm.ac.in" className="text-white">
             Web Team
           </a>

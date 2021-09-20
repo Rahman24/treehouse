@@ -5,3 +5,13 @@
 .btn.shadow-live {
   box-shadow: 0 0rem 2rem 0.5rem rgba(60, 204, 197, 0.4);
 }
+
+.btn {
+	font-size: 0.8rem;
+}
+
+@media screen and (max-width: 1000px) {
+	.btn {
+		font-soze: 1rem;
+	}
+}
