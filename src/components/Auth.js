@@ -6,6 +6,8 @@ import { Redirect } from "react-router";
 const Authenticate = ({ children }) => {
   const { session } = useContext(AppContext);
   const [loading, setLoading] = useState(true);
+  const currentPage = window.location.href.split("/")[3] || "home";
+  const redirectto = "/login?continue="+currentPage;
 
   useEffect(() => {
     if (!session.loading) {
@@ -24,7 +26,7 @@ const Authenticate = ({ children }) => {
   if (session.accessToken) {
     return children;
   } else {
-    return <Redirect to="/login" />;
+    return <Redirect to={redirectto} />;
   }
 };
 

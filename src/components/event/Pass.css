@@ -1,0 +1,13 @@
+.event-pass {
+  width: 30rem;
+  /* height: 10rem; */
+  box-shadow: inset 0px 3px 20px #3cccc6, 0px 3px 30px #000000f4;
+  border: 3px solid #3cccc5;
+  border-radius: 10px;
+  opacity: 1;
+  background-color: #063A50;
+}
+
+.event-pass img {
+  width: 100%;
+}
