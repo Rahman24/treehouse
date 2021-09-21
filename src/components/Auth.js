@@ -7,7 +7,7 @@ const Authenticate = ({ children }) => {
   const { session } = useContext(AppContext);
   const [loading, setLoading] = useState(true);
   const currentPage = window.location.href.split("/")[3] || "home";
-  const redirectto = "/login?continue="+currentPage;
+  const redirect = "/login?continue="+currentPage;
 
   useEffect(() => {
     if (!session.loading) {
@@ -26,7 +26,7 @@ const Authenticate = ({ children }) => {
   if (session.accessToken) {
     return children;
   } else {
-    return <Redirect to={redirectto} />;
+    return <Redirect to={redirect} />;
   }
 };
 
