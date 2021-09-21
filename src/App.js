@@ -7,6 +7,7 @@ import EventsPage from "pages/events";
 import TeamPage from "pages/team";
 import LoginPage from "pages/login";
 import ProfilePage from "pages/profile";
+import LogoPage from "pages/logo";
 import Authenticate from "components/Auth";
 
 import { AppContext } from "contexts/app";
@@ -82,6 +83,15 @@ function App() {
               render={(routeProps) => (
                 <Authenticate>
                   <HomePage {...routeProps} />
+                </Authenticate>
+              )}
+            />
+            <Route
+              exact
+              path="/logo"
+              render={(routeProps) => (
+                <Authenticate>
+                  <LogoPage {...routeProps} />
                 </Authenticate>
               )}
             />
