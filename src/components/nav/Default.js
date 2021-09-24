@@ -28,7 +28,9 @@ const NavigationDefault = () => {
   return (
     <nav className="navbar navbar-dark bg-color-darkblack fixed-top navbar-expand-lg shadow">
       <div className="container-fluid">
-        <img src={banner} className="navbar-banner" alt="navigation banner" />
+      	<a href="/logo">
+        	<img src={banner} className="navbar-banner" alt="navigation banner" />
+        </a>
         <button
           className="navbar-toggler"
           type="button"

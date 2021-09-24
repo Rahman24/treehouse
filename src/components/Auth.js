@@ -6,8 +6,8 @@ import { Redirect } from "react-router";
 const Authenticate = ({ children }) => {
   const { session } = useContext(AppContext);
   const [loading, setLoading] = useState(true);
-  const currentPage = window.location.href.split("/")[3] || "home";
-  const redirect = "/login?continue="+currentPage;
+  const currentPage = window.location.href.split("/")[3] || "/";
+  window.sessionStorage.prev = currentPage;
 
   useEffect(() => {
     if (!session.loading) {
@@ -26,7 +26,7 @@ const Authenticate = ({ children }) => {
   if (session.accessToken) {
     return children;
   } else {
-    return <Redirect to={redirect} />;
+    return <Redirect to="/login" />;
   }
 };
 

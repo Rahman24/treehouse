@@ -8,7 +8,7 @@ import { AppContext } from "contexts/app";
 
 const LoginPage = () => {
   const { session, setSession } = useContext(AppContext);
-  const redirect = window.location.href.split("=")[1] || "home";
+  const redirect = window.sessionStorage.prev || "home";
 
   const handleAuthFailure = (response) => {
     const { errorCode, errorMessage } = response;
