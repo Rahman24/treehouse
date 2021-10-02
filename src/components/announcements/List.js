@@ -1,14 +1,14 @@
 import { useState, useEffect, useContext } from "react";
 import { getMessaging, getToken } from "firebase/messaging";
 
-import { getEvents, updateFCMTokenToDB } from "apis/firebase";
+import { getAnnouncements, updateFCMTokenToDB } from "apis/firebase";
 
-import EventCard from "components/event/Card";
+import AnnouncementCard from "components/announcements/Card";
 import Loader from "components/Loader";
 
 import { ANNOUNCEMENT_CATEGORIES } from "constants/app-defaults";
 
-import { getSortedEventsByCategory } from "helpers/event";
+// import { getSortedEventsByCategory } from "helpers/event";
 
 import { AppContext } from "contexts/app";
 
@@ -22,21 +22,24 @@ const {
 
 const Announcements = () => {
   const [loadingEvents, setLoadingEvents] = useState(true);
-  const [eventsByCategory, setEventsByCategory] = useState({});
+  // const [eventsByCategory, setEventsByCategory] = useState({});
+  const [announcements, setAnnouncements] = useState([]);
   const [notify, setNotify] = useState(false);
   const [activeCategory, setActiveCategory] = useState(general.name);
   const { session } = useContext(AppContext);
 
-  const handleCategorySelection = (event) => {
-    setActiveCategory(event.target.value);
-  };
+  // const handleCategorySelection = (event) => {
+  //   setActiveCategory(event.target.value);
+  // };
 
   useEffect(() => {
     /*eslint no-undef: "off"*/
-    getEvents()
+    getAnnouncements()
       .then((response = []) => {
-        const eventsObj = getSortedEventsByCategory(response);
-        setEventsByCategory(eventsObj);
+        // const eventsObj = getSortedEventsByCategory(response);
+        // setEventsByCategory(eventsObj);
+        // debugger
+        setAnnouncements(response);
         setLoadingEvents(false);
       })
       .catch((err) => {
@@ -87,12 +90,12 @@ const Announcements = () => {
     );
   };
 
-  const eventList = eventsByCategory[activeCategory] || [];
+  // const eventList = eventsByCategory[activeCategory] || [];
   return (
     <div className="events-list">
       <br />
       <br />
-      <div
+      {/* <div
         className="btn-group event-category-group mb-5"
         role="group"
         aria-label="Event Category radio group"
@@ -138,14 +141,14 @@ const Announcements = () => {
         <label className="btn btn-outline-green text-uppercase fw-bold" htmlFor="btnradio3">
           House
         </label>
-      </div>
+      </div> */}
 
       <Loader loading={loadingEvents}>
         <div className="m-auto justify-content-center d-flex event-card-list">
-          {eventList.map((eventObj) => (
-            <EventCard key={eventObj.desc} {...eventObj} />
+          {announcements.map((eventObj) => (
+            <AnnouncementCard key={eventObj.desc} {...eventObj} />
           ))}
-          {eventList.length === 0 && (
+          {announcements.length === 0 && (
             <h4 className="text-center text-uppercase text-white m-auto">
               There are no Announcements made yet!!
             </h4>
