@@ -1,7 +1,6 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { Redirect } from "react-router";
 
-import Layout from "components/Layout";
 import AuthButton from "components/button/Auth";
 import Footer from "components/Footer";
 
@@ -11,7 +10,6 @@ import treehouse_banner from "assets/images/banner.png";
 
 const LoginPage = () => {
   const { session, setSession } = useContext(AppContext);
-  const redirect = window.sessionStorage.prev || "/";
 
   const handleAuthFailure = (response) => {
     const { errorCode, errorMessage } = response;
@@ -23,7 +21,7 @@ const LoginPage = () => {
   };
 
   if(session.accessToken) {
-    return <Redirect to={redirect} />;
+    return <Redirect to="/" />;
   }
   
   return (
@@ -31,7 +29,7 @@ const LoginPage = () => {
       <div style={{ paddingTop: "1rem", minHeight: "75vh" }}>
       <div className="container event-pass-page">
         <div className="m-4 text-center">
-        	<img src={treehouse_banner} style={{ width:"70%", paddingBottom: "2rem" }} />
+        	<img src={treehouse_banner} style={{ width:"70%", paddingBottom: "2rem" }} alt="treehouse banner" />
           <h1 className="text-center text-white mb-4 heading text-uppercase">
           	Welcome to Treehouse!!
           </h1>

@@ -14,7 +14,11 @@ import { AppContext } from "contexts/app";
 
 import "components/event/List.css";
 
-const { generalAnnouncements: general, courseAnnouncements: course, houseAnnouncements: house } = ANNOUNCEMENT_CATEGORIES;
+const {
+  generalAnnouncements: general,
+  courseAnnouncements: course,
+  houseAnnouncements: house,
+} = ANNOUNCEMENT_CATEGORIES;
 
 const Announcements = () => {
   const [loadingEvents, setLoadingEvents] = useState(true);
@@ -48,7 +52,10 @@ const Announcements = () => {
   }, [session]);
 
   const registerForNotification = () => {
-    if (session.accessToken && window.confirm("Do you want to receive notifications for upcoming events?")) {
+    if (
+      session.accessToken &&
+      window.confirm("Do you want to receive notifications for upcoming events?")
+    ) {
       const messaging = getMessaging();
       getToken(messaging, { vapidKey: process.env.REACT_APP_FIREBASE_VAPID_KEY })
         .then((token) => {
@@ -83,7 +90,8 @@ const Announcements = () => {
   const eventList = eventsByCategory[activeCategory] || [];
   return (
     <div className="events-list">
-      <br /><br />
+      <br />
+      <br />
       <div
         className="btn-group event-category-group mb-5"
         role="group"

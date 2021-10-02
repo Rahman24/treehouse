@@ -42,3 +42,7 @@
 .btn:focus {
   box-shadow: none;
 }
+
+.fullscreen-modal .modal-dialog {
+  max-width: 100vw;
+}
