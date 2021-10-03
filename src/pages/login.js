@@ -1,10 +1,12 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { Redirect } from "react-router";
 
-import Layout from "components/Layout";
 import AuthButton from "components/button/Auth";
+import Footer from "components/Footer";
 
 import { AppContext } from "contexts/app";
+
+import treehouse_banner from "assets/images/banner.png";
 
 const LoginPage = () => {
   const { session, setSession } = useContext(AppContext);
@@ -23,14 +25,16 @@ const LoginPage = () => {
   }
   
   return (
-    <Layout>
+    <main className="bg-color">
+      <div style={{ paddingTop: "1rem", minHeight: "75vh" }}>
       <div className="container event-pass-page">
         <div className="m-4 text-center">
+        	<img src={treehouse_banner} style={{ width:"70%", paddingBottom: "2rem" }} alt="treehouse banner" />
           <h1 className="text-center text-white mb-4 heading text-uppercase">
           	Welcome to Treehouse!!
           </h1>
           <p className="text-center text-white mb-5">
-            Please signin with your @student.onlinedegree.iitm.ac.in account to get started!!
+            Please sign in with your IIT Madras Student Email ID to get started!
           </p>
           <AuthButton onAuthSuccess={handleAuthSuccess} onAuthFailure={handleAuthFailure} />
         </div>
@@ -41,7 +45,9 @@ const LoginPage = () => {
           </a>
         </h6>
       </div>
-    </Layout>
+      </div>
+      <Footer />
+    </main>
   );
 };
 

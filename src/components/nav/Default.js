@@ -1,6 +1,9 @@
 import { NavLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 import EventLiveTag from "components/event/LiveTag";
+
+import { openLogoModal } from "store/slices/modal";
 
 import "./Default.css";
 import banner from "assets/images/banner.png";
@@ -25,10 +28,18 @@ const LINKS = [
 ];
 
 const NavigationDefault = () => {
+  const dispatch = useDispatch();
   return (
     <nav className="navbar navbar-dark bg-color-darkblack fixed-top navbar-expand-lg shadow">
       <div className="container-fluid">
-        <img src={banner} className="navbar-banner" alt="navigation banner" />
+        <button
+          type="button"
+          className="btn btn-link"
+          data-toggle="modal"
+          onClick={() => dispatch(openLogoModal("logoModal"))}
+        >
+          <img src={banner} className="navbar-banner" alt="navigation banner" />
+        </button>
         <button
           className="navbar-toggler"
           type="button"

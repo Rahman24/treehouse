@@ -33,6 +33,25 @@ export const getEvents = () => {
   });
 };
 
+export const getAnnouncements = () => {
+  const db = getFirestore();
+  return getDocs(collection(db, "announcements")).then((querySnapshot) => {
+    let events = [];
+    querySnapshot.forEach((doc) => {
+      const { desc, img, date, name: title, tags } = doc.data();
+      events.push({
+        id: doc.id,
+        title,
+        desc,
+        img,
+        date,
+        tags
+      });
+    });
+    return events;
+  });
+};
+
 export const getProfileDetails = async () => {
   let regEvents = [];
   const auth = getAuth();

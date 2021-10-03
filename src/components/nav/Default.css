@@ -35,7 +35,7 @@
 .navbar-toggler {
   border: 0;
   border-radius: 0;
-  font-size: 1rem;
+  font-size: 1rem
 }
 
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {

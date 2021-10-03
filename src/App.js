@@ -8,6 +8,7 @@ import TeamPage from "pages/team";
 import LoginPage from "pages/login";
 import ProfilePage from "pages/profile";
 import Authenticate from "components/Auth";
+import ModalIndex from "components/modal/Index";
 
 import { AppContext } from "contexts/app";
 
@@ -17,10 +18,10 @@ import { onMessageListener } from "apis/firebase";
 
 import "./App.css";
 
+
 const defaultState = { loading: false, liveData: {} };
 function App() {
   const [session, setSession] = useState({ ...defaultState, loading: true });
-
   useLayoutEffect(() => {
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
@@ -89,6 +90,7 @@ function App() {
           </Switch>
         </BrowserRouter>
       </AppContext.Provider>
+      <ModalIndex />
     </div>
   );
 }
