@@ -1,16 +1,16 @@
 import "./Card.css";
 
-const EventCard = ({ date, desc = [], img, title, completed = false }) => {
+const AnnouncementCard = ({ date, desc = [], img, title, completed = false }) => {
   const options = { hour: "2-digit", minute: "2-digit" };
   const announcementDate = new Date(date.seconds * 1000).toDateString();
   const announcementTime = new Date(date.seconds * 1000).toLocaleTimeString("en-US", options);
-  const completedEventClasses = completed ? "opacity-50" : "";
+  const completedannouncementClasses = completed ? "opacity-50" : "";
 
   return (
-    <div className="event-card card mx-4 mt-2 mb-3 p-0 rounded">
+    <div className="announcement-card card mx-4 mt-2 mb-3 p-0 rounded">
       <div className="row">
-        <div className={completedEventClasses}>
-          <img src={img} alt={desc} className="card-img-left event-img" />
+        <div className={completedannouncementClasses}>
+          <img src={img} alt={desc} className="card-img-left announcement-img" />
         </div>
         <div className="">
           <div className="card-body m-auto text-center">
@@ -31,4 +31,4 @@ const EventCard = ({ date, desc = [], img, title, completed = false }) => {
   );
 };
 
-export default EventCard;
+export default AnnouncementCard;
