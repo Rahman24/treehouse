@@ -3,7 +3,7 @@ import { getMessaging, getToken } from "firebase/messaging";
 
 import { getAnnouncements, updateFCMTokenToDB } from "apis/firebase";
 
-import AnnouncementCard from "components/announcements/Card";
+import AnnouncementCard from "./Card";
 import Loader from "components/Loader";
 
 import { ANNOUNCEMENT_CATEGORIES } from "constants/app-defaults";
@@ -12,7 +12,7 @@ import { ANNOUNCEMENT_CATEGORIES } from "constants/app-defaults";
 
 import { AppContext } from "contexts/app";
 
-import "components/event/List.css";
+import "./List.css";
 
 const {
   generalAnnouncements: general,
@@ -75,7 +75,7 @@ const Announcements = () => {
     return (
       <div className="m-auto text-center my-4">
         {notify ? (
-          <span className="btn btn-info register-button rounded-pill px-5">
+          <span className="btn register-button rounded-pill bg-color-black px-5 btn-box-shadow-black text-white">
             You will be notified of events
           </span>
         ) : (
